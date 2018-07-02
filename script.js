@@ -27,10 +27,7 @@ document.addEventListener('DOMContentLoaded', function()
             title.innerText = text;
             const data = new Date();
             const dodano = document.createElement('p');
-            let minuty = data.getMinutes();
-            if(minuty < 10)
-                minuty = '0' + minuty;
-            dodano.innerText = 'Dodano: ' + data.getDate() + '.' + (data.getMonth()+1) + '.' + data.getFullYear() + ' ' + data.getHours() + ':' + minuty;
+            dodano.innerText = 'Dodano: ' + addZero(data.getDate()) + '.' + addZero((data.getMonth()+1)) + '.' + data.getFullYear() + ' ' + addZero(data.getHours()) + ':' + addZero(data.getMinutes());
         
             const button = document.createElement('button');
             button.classList.add('btn');
